@@ -5,6 +5,9 @@
 [coredential]
     helper = cache
 
+[diff "ansible-vault"]
+    textconv = ansible-vault view
+
 [alias]
     # COMMON SHORTHANDS
 
@@ -16,6 +19,9 @@
 
     # see what you're commiting when editing the commit message
     ci = commit --verbose
+
+    ce = commit --allow-empty
+    ca = commit -a
 
     d = diff --color=always
     wd = diff --color=always --word-diff=color   # mnemonic: Word-Diff
@@ -34,6 +40,11 @@
 
     s = status --short   # see also --branch option
     st = status
+
+    rev-commit = "!f(){ git reset --hard HEAD^; };f"
+
+    squash-last = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
+    squash = "!f(){ git rebase -i HEAD~${1}; };f"
 
     # from https://help.github.com/articles/remove-sensitive-data
     remove-file = "!f() { git filter-branch -f --index-filter \"git rm --cached --ignore-unmatch $1\" --prune-empty --tag-name-filter cat -- --all; }; f"
