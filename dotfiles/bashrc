@@ -192,3 +192,5 @@ export PS1="${usercolor}\u@\h${pathcolor} \w${resetcolors}\$(__git_ps1)\\$ "
 
 complete -C '/usr/bin/aws_completer' aws
 
+export GOROOT=~/go
+export GOPATH=~/go
