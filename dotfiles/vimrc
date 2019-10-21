@@ -139,6 +139,9 @@ au BufNewFile,BufRead *.py set tabstop=2
       \ expandtab
       \ autoindent
       \ fileformat=unix
+
+autocmd BufRead,BufNewFile *.go setlocal noexpandtab "do not use space for tabs in go
+
 set encoding=utf-8
 
 let g:ycm_python_binary_path = 'python'
