@@ -1,4 +1,6 @@
 #!/bin/bash -x 
 
+docker system prune
+docker system prune -a
+docker images purge
 docker rmi $(docker images -a -q)
-
