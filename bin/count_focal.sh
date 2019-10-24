@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Count focal lenght used in pictures
+#Count focal lenght used in pictures
 
 find . -name "*.ARW" -exec exiftool {} \; | egrep 'Focal Length.* equivalent.*' | tee f.txt | sort | uniq -c | sort -r
 
