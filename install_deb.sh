@@ -17,6 +17,8 @@ sudo apt-get update && sudo apt-get install shutter
 sudo apt install virtualenv
 sudo apt install lastpass-cli
 
+sudo apt-get install network-manager-l2tp network-manager-l2tp-gnome
+
 sudo apt-get update && sudo apt-get install -y apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list

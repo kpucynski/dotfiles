@@ -192,7 +192,7 @@ type __git_ps1 &>/dev/null || function __git_ps1 () { true; }
 
 export PS1="${usercolor}\u@\h${pathcolor} \w${resetcolors}\$(__git_ps1)\\$ "
 
-complete -C '/usr/bin/aws_completer' aws
+complete -C '~/workspace/virtualenv/py3/bin/aws_completer' aws
 
 export GOPATH=$HOME/go
 export PATH="$PATH":/usr/local/go/bin:$GOPATH/bin
