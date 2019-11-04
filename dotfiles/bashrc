@@ -8,6 +8,8 @@ case $- in
       *) return;;
 esac
 
+export EDITOR=vim
+
 # default settings for less. You may also want to disable line wrapping with -S
 export LESS='-MRi#8j.5'
 #             |||| `- center on search matches
@@ -194,3 +196,4 @@ complete -C '/usr/bin/aws_completer' aws
 
 export GOPATH=$HOME/go
 export PATH="$PATH":/usr/local/go/bin:$GOPATH/bin
+source <(kubectl completion bash)
