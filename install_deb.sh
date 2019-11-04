@@ -2,6 +2,9 @@
 
 # it should be done in Ansible
 
+sudo apt remove nano
+sudo apt purge apport
+
 sudo apt install pandoc vim mc gnome-tweaks diodon
 
 curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
@@ -11,6 +14,7 @@ sudo apt-get update && sudo apt-get install spotify-client
 sudo add-apt-repository ppa:linuxuprising/shutter
 sudo apt-get update && sudo apt-get install shutter
 
+sudo apt install virtualenv
 sudo apt install lastpass-cli
 
 sudo apt-get update && sudo apt-get install -y apt-transport-https
