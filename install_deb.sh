@@ -5,7 +5,7 @@
 sudo apt remove nano
 sudo apt purge apport
 
-sudo apt install pandoc vim mc gnome-tweaks diodon
+sudo apt install pandoc vim mc gnome-tweaks diodon meld
 
 curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list

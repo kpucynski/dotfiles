@@ -197,3 +197,4 @@ complete -C '~/workspace/virtualenv/py3/bin/aws_completer' aws
 export GOPATH=$HOME/go
 export PATH="$PATH":/usr/local/go/bin:$GOPATH/bin
 source <(kubectl completion bash)
+source <(helm completion bash)
