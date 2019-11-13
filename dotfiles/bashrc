@@ -195,6 +195,6 @@ export PS1="${usercolor}\u@\h${pathcolor} \w${resetcolors}\$(__git_ps1)\\$ "
 complete -C '~/workspace/virtualenv/py3/bin/aws_completer' aws
 
 export GOPATH=$HOME/go
-export PATH="$PATH":/usr/local/go/bin:$GOPATH/bin
+export PATH="$PATH":/usr/local/go/bin:$GOPATH/bin:$HOME/.gem/ruby/2.5.0/bin
 source <(kubectl completion bash)
 source <(helm completion bash)

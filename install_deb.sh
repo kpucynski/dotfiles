@@ -36,3 +36,5 @@ sudo add-apt-repository \
    stable"
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 sudo usermod -aG docker $(whoami)
+
+curl -Lskf https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz | tar -zxvC ~/bin kubeval
