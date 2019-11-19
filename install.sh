@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -e
 
 #here="$(cd "${0%/*}"; pwd)"
