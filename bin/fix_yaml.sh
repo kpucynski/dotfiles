@@ -1,3 +1,5 @@
+#!/bin/bash
+
 for i in `find $1 \( -name "*.yml" -o -name "*.yaml" \)`; do
 	echo $i
 
