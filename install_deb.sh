@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 # it should be done in Ansible
 
