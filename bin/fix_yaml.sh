@@ -1,16 +1,18 @@
 #!/bin/bash
 
-for i in `find $1 \( -name "*.yml" -o -name "*.yaml" \)`; do
-	echo $i
+while IFS= read -r -d '' file
+do
+  echo $file
+  
+  # fix header
+  if [ ! "$(head -1 $file)" == "---" ]; then
+  	sed -i '1s,^,---\n,' $file;
+  fi;
+  
+  # fix trailing spaces
+  sed -i 's/[ \t]\+$//' $file;
+  
+  # fix comments
+  sed -i 's/^\([[:space:]]*\)#\([[:alpha:]]\)/\1# \2/g' $file
 
-	# fix header
-	if [ ! "`head -1 $i`" == "---" ]; then
-		sed -i '1s,^,---\n,' $i;
-	fi;
-
-	# fix trailing spaces
-	sed -i 's/[ \t]\+$//' $i;
-
-	# fix comments
-    sed -i 's/^\([[:space:]]*\)#\([[:alpha:]]\)/\1# \2/g' $i
-done;
+done < <(find $1 \( -name "*.yml" -o -name "*.yaml" \) -print0)
