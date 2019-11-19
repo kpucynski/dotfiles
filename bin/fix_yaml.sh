@@ -1,4 +1,4 @@
-for i in `find $1 -name "*.yml"`; do
+for i in `find $1 \( -name "*.yml" -o -name "*.yaml" \)`; do
 	echo $i
 
 	# fix header
@@ -10,5 +10,5 @@ for i in `find $1 -name "*.yml"`; do
 	sed -i 's/[ \t]\+$//' $i;
 
 	# fix comments
-	sed -i 's/^#\([[:alpha:]]\)/# \1/g' $i
+    sed -i 's/^\([[:space:]]*\)#\([[:alpha:]]\)/\1# \2/g' $i
 done;
