@@ -13,12 +13,14 @@ echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sou
 sudo apt-get update && sudo apt-get install spotify-client
 
 sudo add-apt-repository ppa:linuxuprising/shutter
-sudo apt-get update && sudo apt-get install shutter
+sudo add-apt-repository ppa:phoerious/keepassxc
 
-sudo apt install virtualenv
-sudo apt install lastpass-cli
-
-sudo apt-get install network-manager-l2tp network-manager-l2tp-gnome
+sudo apt install \
+  shutter \
+  virtualenv \
+  keepassxc \
+  lastpass-cli \
+  network-manager-l2tp network-manager-l2tp-gnome \
 
 sudo apt-get update && sudo apt-get install -y apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
