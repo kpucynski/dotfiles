@@ -52,6 +52,8 @@
     # from https://help.github.com/articles/remove-sensitive-data
     remove-file = "!f() { git filter-branch -f --index-filter \"git rm --cached --ignore-unmatch $1\" --prune-empty --tag-name-filter cat -- --all; }; f"
 
+    move-tag = "!f(){ git push origin :refs/tags/${1} && git tag -f ${1} && git push origin master --tags; }; f"
+
     # PRETTY LOGS
 
     # compact log with branch names etc.
