@@ -54,6 +54,8 @@
 
     move-tag = "!f(){ git push origin :refs/tags/${1} && git tag -f ${1} && git push origin master --tags; }; f"
 
+    branch-add = "!f(){ git branch ${1} && git checkout ${1}; }; f"
+
     # PRETTY LOGS
 
     # compact log with branch names etc.
