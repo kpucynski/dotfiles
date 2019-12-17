@@ -28,6 +28,9 @@ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/
 sudo apt-get update
 sudo apt-get install -y kubectl
 
+sudo add-apt-repository ppa:libratbag-piper/piper-libratbag-git
+sudo apt-get install -y piper
+
 sudo add-apt-repository ppa:solaar-unifying/ppa
 sudo apt-get install -y solaar
 
