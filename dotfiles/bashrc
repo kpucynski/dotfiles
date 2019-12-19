@@ -198,3 +198,5 @@ export GOPATH=$HOME/go
 export PATH="$PATH":/usr/local/go/bin:$GOPATH/bin:$HOME/.gem/ruby/2.5.0/bin
 source <(kubectl completion bash)
 source <(helm completion bash)
+
+complete -C /home/kpucynski/bin/aliyun aliyun
