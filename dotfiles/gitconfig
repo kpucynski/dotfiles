@@ -5,6 +5,9 @@
 [includeIf "gitdir:~/workspace/"]
   path = .gitconfig-priv
 
+[includeIf "gitdir:~/go/"]
+  path = .gitconfig-priv
+
 [coredential]
     helper = cache
 
