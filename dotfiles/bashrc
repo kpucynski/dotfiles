@@ -200,3 +200,5 @@ source <(kubectl completion bash)
 source <(helm completion bash)
 
 complete -C /home/kpucynski/bin/aliyun aliyun
+
+complete -C /home/kpucynski/bin/terraform terraform
