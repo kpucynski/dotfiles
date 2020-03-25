@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-#here="$(cd "${0%/*}"; pwd)"
 here="$(pwd)"
 
 # Install dotfiles
