@@ -1,0 +1,209 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'tpope/vim-fugitive'
+Plugin 'chriskempson/base16-vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vimwiki/vimwiki'
+Plugin 'kien/ctrlp.vim'
+Plugin 'jparker/vim-puppet'
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'tmhedberg/SimpylFold'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-surround'
+Plugin 'mattn/calendar-vim'
+Plugin 'DavidEGx/ctrlp-smarttabs'
+Plugin 'iamcco/markdown-preview.nvim'
+Plugin 'tpope/vim-abolish'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+filetype plugin on
+"
+"let g:airline#extensions#tabline#left_sep = '|'
+"let g:airline#
+syntax on
+set background=dark
+colorscheme nord
+set nu
+set bs=2
+set ruler
+" Show matching brackets when text indicator is over them
+set showmatch
+" How many tenths of a second to blink when matching brackets
+set mat=2
+" Use spaces instead of tabs
+set expandtab
+" Be smart when using tabs ;)
+set smarttab
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
+" Linebreak on 500 characters
+set lbr
+set tw=500
+set ai "Auto indent
+set si "Smart indent
+set wrap "Wrap lines
+set laststatus=2
+set timeoutlen=500
+set cursorline
+set clipboard=unnamed
+set mouse=a
+" Add a bit extra margin to the left
+"set foldcolumn=1
+
+" Folding
+set foldmethod=indent " fold based on indent level 
+set foldenable " enable folding
+set foldlevel=1
+set foldclose=all
+set foldlevelstart=10   " open most folds by default
+set foldnestmax=10      " 10 nested fold max
+
+au FileType sh let g:sh_fold_enabled=5
+au FileType sh let g:is_bash=1
+au FileType sh set foldmethod=syntax
+
+" 120 characters line
+" Uncomment second line if you want to make 120+ columns highlighted as well.
+set colorcolumn=120
+"execute "set colorcolumn=" . join(range(81,335), ',')
+highlight ColorColumn ctermbg=Black ctermfg=DarkRed
+
+" Highlight trailing spaces
+" http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" Always show the status line
+set laststatus=2
+
+set hidden
+
+" Better command-line completion
+set wildmenu
+
+" Show partial commands in the last line of the screen
+set showcmd
+
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+
+"backups directory
+set backupdir=~/.vim/backup//
+set directory=~/.vim/backup//
+" Turn backup off, since most stuff is in SVN, git etc. anyway...
+set nobackup
+set nowb
+set noswapfile
+
+nnoremap <space> za
+
+" :W sudo saves the file 
+" (useful for handling the permission-denied error)
+command W w !sudo tee % > /dev/null
+
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" python
+au BufNewFile,BufRead *.py set tabstop=2
+      \ softtabstop=2
+      \ shiftwidth=2
+      \ textwidth=120
+      \ expandtab
+      \ autoindent
+      \ fileformat=unix
+
+autocmd BufRead,BufNewFile *.go setlocal noexpandtab "do not use space for tabs in go
+
+set encoding=utf-8
+
+let g:ycm_python_binary_path = 'python'
+"py3 << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+"  project_base_dir = os.environ['VIRTUAL_ENV']
+"  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"  exec(open(activate_this).read(), dict(__file__=activate_this))
+"EOF
+
+"tmux title
+autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window 'vim@" . expand(pathshorten(getcwd())) . "'")
+autocmd VimLeave * call system("tmux setw automatic-rename")
+
+" Airline
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+call airline#parts#define_accent('linenr', 'none')
+call airline#parts#define_accent('maxlinenr', 'none')
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+let g:nord_italic = 1
+let g:nord_comment_brightness = 12
+
+nmap <C-n> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree  | endif
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-l> :wincmd l<CR>
+nnoremap <F5> :CtrlPBuffer<CR>
+nnoremap <F6> :CtrlPSmartTabs<CR>
+
+"vimWiki
+let g:vimwiki_list = [{'path': '~/XD/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+
+"CtrlP
+let g:ctrlp_extensions = ['smarttabs']
+
+command! ForceBuild !touch .circleci/force-build && git add .circleci/force-build && git commit -m "Force build" && git push
+command! GerritUpdate !git commit --amend --no-edit; git review
+command! GerritReview !git commit; git review
+
+"Spellchecking
+set spelllang=en,pl
+
+" Selenized color scheme
+colorscheme selenized
+
+language en_US.UTF-8
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+

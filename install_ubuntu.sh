@@ -1,12 +1,11 @@
 #!/bin/bash
 set -e
 
-#here="$(cd "${0%/*}"; pwd)"
 here="$(pwd)"
 
 # Install dotfiles
 
-for file in "$here"/dotfiles/*; do
+for file in "${here}"/dotfiles/common/* "${here}"/dotfiles/ubuntu/*; do
   name="$(basename "$file" .md)"
   dotname=".${name}"
 
