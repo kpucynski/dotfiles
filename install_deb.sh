@@ -16,6 +16,9 @@ sudo add-apt-repository ppa:linuxuprising/shutter
 sudo add-apt-repository ppa:phoerious/keepassxc
 
 sudo apt install \
+  bat \
+  git \
+  git-delta \
   gnome-clocks \
   shutter \
   virtualenv \

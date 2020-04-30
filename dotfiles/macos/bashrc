@@ -200,11 +200,11 @@ export PS1="${usercolor}\u@\h${pathcolor} \w${resetcolors}\$(__git_ps1)\\$ "
 complete -C '/usr/local/bin/aws_completer' aws
 
 export GOPATH=$HOME/go
-export PATH="$PATH":/usr/local/go/bin:$GOPATH/bin:$HOME/.gem/ruby/2.5.0/bin
+export PATH="$PATH":/usr/local/sbin:/usr/local/go/bin:$GOPATH/bin:$HOME/.gem/ruby/2.5.0/bin
 source <(kubectl completion bash)
 source <(helm completion bash)
 source $(brew --prefix)/etc/bash_completion
 
 #complete -C /home/kpucynski/bin/aliyun aliyun
 
-complete -C /home/kpucynski/bin/terraform terraform
+complete -C /usr/local/bin/terraform terraform

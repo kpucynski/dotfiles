@@ -93,7 +93,11 @@
     # display non-ASCII characters (e.g. Polish) instead of quoting them
     quotepath = false
     # restore default pager behavior (needed because we manually set $LESS)
-    pager = "less -FRX"
+    #pager = "less -FRX"
+    pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
+
+[interactive]
+    diffFilter = delta --color-only
 
 [diff]
     # detect renamed files and show only actual differences between them
