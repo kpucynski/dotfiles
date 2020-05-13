@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #openssl pkcs12 -export -in pki/issued/unifi.lan.chmurka.info.crt -inkey pki/private/unifi.lan.chmurka.info.key -out unifi.p12 -name unifi -CAfile pki/ca.crt -caname root
 scp unifi.p12 unifi:/tmp

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 case $# in
     1) MASTER="origin/master"; BRANCH="$1" ;;

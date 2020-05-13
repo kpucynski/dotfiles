@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 old_banch=$1
 new_branch=$2

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 kubectl -n kube-system delete deployment tiller-deploy
 kubectl -n kube-system delete service/tiller-deploy
