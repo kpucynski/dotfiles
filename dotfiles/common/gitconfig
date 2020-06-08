@@ -120,3 +120,5 @@
     # automatically process "fixup!" commits when rebasing interactively
     autosquash = true
 
+[pull]
+	rebase = true
