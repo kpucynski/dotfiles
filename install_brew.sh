@@ -8,10 +8,13 @@ brew install \
     bash-completion \
     bat \
     cmake \
+    coreutils \
     dep \
     git \
     git-delta \
+    gnu-sed \
     golang \
+    grep \
     htop \
     jq \
     lastpass-cli \
