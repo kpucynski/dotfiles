@@ -46,7 +46,7 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable"
 sudo apt-get install docker-ce docker-ce-cli containerd.io
-sudo usermod -aG docker $(whoami)
+sudo usermod -aG docker "$(whoami)"
 
 # unicode fonts
 sudo apt-get install ttf-ancient-fonts fonts-noto fonts-symbola

@@ -12,7 +12,7 @@ RECORD_TYPE=$4
 TTL=$5
 RESOURCE_VALUE=$6
 
-JSON_FILE=`mktemp`
+JSON_FILE=$(mktemp)
 
 cat > "${JSON_FILE}" <<EOF
 {
@@ -35,4 +35,4 @@ cat > "${JSON_FILE}" <<EOF
 }
 EOF
 
-aws route53 change-resource-record-sets --hosted-zone-id ${HOSTED_ZONE_ID} --change-batch file://"${JSON_FILE}"
+aws route53 change-resource-record-sets --hosted-zone-id "${HOSTED_ZONE_ID}" --change-batch file://"${JSON_FILE}"

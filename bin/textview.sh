@@ -3,7 +3,7 @@
 filename="$1"
 
 if [ ! -f "$filename" ] ; then
-    echo $filename not found.
+    echo "$filename" not found.
     exit 1
 fi
 
@@ -29,4 +29,4 @@ man() {
             man "$@"
 }
 
-pandoc -s -t man $filename | man -l -
+pandoc -s -t man "$filename" | man -l -
