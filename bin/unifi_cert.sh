@@ -8,5 +8,3 @@ ssh unifi service unifi restart
 scp pki/issued/unifi.lan.chmurka.info.crt unifi:/etc/ssl/private/cloudkey.crt
 scp pki/private/unifi.lan.chmurka.info.key unifi:/etc/ssl/private/cloudkey.key
 ssh unifi service nginx restart
-
-

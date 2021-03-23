@@ -13,7 +13,7 @@ echo ==========================
 echo "You have 10 seconds for Ctrl+c..."
 sleep 10
 
-. selenized 
+. selenized
 
 profile_path="org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$puuid/"
 

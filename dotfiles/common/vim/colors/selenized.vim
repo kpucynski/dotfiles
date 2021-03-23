@@ -53,4 +53,3 @@ exe "hi Type                       ctermfg=2                             guifg="
 exe "hi Ignore       cterm=bold    ctermfg=7                 gui=bold    guifg=".s:guifg2
 exe "hi Error        cterm=bold    ctermfg=7    ctermbg=1    gui=bold    guifg=".s:guifg1." guibg=".s:guired
 exe "hi Todo         cterm=reverse ctermfg=3    ctermbg=0                guifg=".s:guibg1." guibg=".s:guiyellow
-

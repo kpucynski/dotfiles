@@ -9,4 +9,3 @@ git config user.email "kpucynski@gmail.com"
 # show output
 git config user.name
 git config user.email
-

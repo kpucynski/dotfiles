@@ -28,7 +28,7 @@ cat > "${JSON_FILE}" <<EOF
                     {
                         "Value": "${RESOURCE_VALUE}"
                     }
-                ]                
+                ]
             }
         }
     ]

@@ -25,7 +25,7 @@ sudo apt install \
   keepassxc \
   lastpass-cli \
   network-manager-l2tp network-manager-l2tp-gnome \
-  texlive-full  
+  texlive-full
 
 sudo apt-get update && sudo apt-get install -y apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -

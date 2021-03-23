@@ -13,7 +13,7 @@ for file in "${here}"/dotfiles/common/* "${here}"/dotfiles/macos/*; do
     echo "Backing up ${dotname}"
     mv "${HOME}"/${dotname} "${HOME}"/${dotname}.orig
   fi
- 
+
   echo "Installing ${dotname}"
   ln -sfnv ${file#$HOME/} "${HOME}/${dotname}"
 done
@@ -33,4 +33,3 @@ for file in "$here"/bin/*; do
   echo "Installing ${name}"
   ln -sfnv ../${file#$HOME/} "${HOME}/bin/${name}"
 done
-
